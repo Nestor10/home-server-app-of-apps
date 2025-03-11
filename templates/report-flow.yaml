@@ -7,8 +7,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:Nestor10/reportflow.git
-    targetRevision: master
+    repoURL: https://github.com/Nestor10/reportflow
+    targetRevision: main
     path: GitOpts/environments/dev
   destination:
     server: https://kubernetes.default.svc
