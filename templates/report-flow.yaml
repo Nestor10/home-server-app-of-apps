@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/Nestor10/reportflow
     targetRevision: main
-    path: GitOpts/environments/dev
+    path: argocd/GitOps/environments/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
