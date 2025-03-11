@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: reportflow-app
+  annotations:
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:Nestor10/reportflow.git
+    targetRevision: master
+    path: GitOpts/environments/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: false
+    syncOptions:
+      - Validate=true
+      - PrunePropagationPolicy=Foreground
+      - PruneLast=true
