@@ -7,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Nestor10/reportflow
+    repoURL: git@github.com:Nestor10/report-flow-deploy.git
     targetRevision: main
-    path: argocd/GitOps/environments/dev
+    path: argocd/GitOps/environments/dev # Or whatever the path is in your new private repo
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
