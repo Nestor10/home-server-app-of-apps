@@ -7,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Nestor10/reportflow
+    repoURL: git@github.com:Nestor10/report-flow-deploy.git
     targetRevision: main
-    path: argocd/GitOps/environments/dev
+    path: GitOps/environments/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
@@ -22,3 +22,34 @@ spec:
       - Validate=true
       - PrunePropagationPolicy=Foreground
       - PruneLast=true
+
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: reportflow-app
+#  annotations:
+#    argocd-image-updater.argoproj.io/image-list: cal=registry.orb.local/johndoe/reportflow
+#    argocd-image-updater.argoproj.io/cal.update-strategy: semver
+#    argocd-image-updater.argoproj.io/currency.update-strategy: semver
+#    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
+#    argocd-image-updater.argoproj.io/write-back-target: "kustomization:../../environments/dev"
+#
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    repoURL: git@github.com:Nestor10/reportflow-gitops.git
+#    targetRevision: master
+#    path: environments/dev
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: myapp
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
+#      prune: true
+#      allowEmpty: false
+#    syncOptions:
+#      - Validate=true
+#      - PrunePropagationPolicy=Foreground
+#      - PruneLast=true
