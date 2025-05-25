@@ -12,7 +12,7 @@ spec:
     path: GitOps/environments/dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: report-flow
   syncPolicy:
     automated:
       selfHeal: true
